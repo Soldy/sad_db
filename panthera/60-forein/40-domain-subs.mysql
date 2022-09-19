@@ -1,0 +1,7 @@
+ALTER TABLE `domain-subs`
+ADD CONSTRAINT `FK_domainSub-domain`
+FOREIGN KEY (domain) REFERENCES domains(id);
+
+ALTER TABLE `domain-subs`
+ADD CONSTRAINT `FK_domainSub-dialect`
+FOREIGN KEY (dialect) REFERENCES word_dialects(id);
