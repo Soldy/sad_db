@@ -1,0 +1,4 @@
+CREATE TABLE `link_wordDialects-langs` (
+    `dialect` BIGINT UNSIGNED NOT NULL,
+    `lang` BIGINT UNSIGNED NOT NULL,
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
