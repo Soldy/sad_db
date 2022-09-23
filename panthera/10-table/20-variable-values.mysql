@@ -1,0 +1,6 @@
+CREATE TABLE `variable-values` (
+    `id` BIGINT UNSIGNED NOT NULL,
+    `value` VARCHAR(512) NOT NULL,
+     UNIQUE KEY `id` (`id`),
+     KEY `index` (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
