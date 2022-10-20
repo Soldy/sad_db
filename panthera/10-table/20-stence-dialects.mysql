@@ -1,0 +1,8 @@
+CREATE TABLE `stence_dialects` (
+    `id` BIGINT UNSIGNED NOT NULL,
+    `stence` BIGINT UNSIGNED NOT NULL,
+    `serial` INT UNSIGNED NOT NULL,
+    `dialect` BIGINT UNSIGNED NOT NULL,
+     UNIQUE KEY `id` (`id`),
+     KEY `index` (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
