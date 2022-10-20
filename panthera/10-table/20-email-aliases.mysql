@@ -1,0 +1,7 @@
+CREATE TABLE `email_aliases` (
+    `id` BIGINT UNSIGNED NOT NULL,
+    `alias` BIGINT UNSIGNED NOT NULL COMMENT 'foreign to world_dialects.id',
+    `domain` BIGINT UNSIGNED NOT NULL COMMENT 'foreign to domains.id',
+     UNIQUE KEY `id` (`id`),
+     KEY `index` (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
