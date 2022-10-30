@@ -1,6 +1,6 @@
-CREATE TABLE `domains_top_level` (
+CREATE TABLE `domain_top_levels` (
     `id` BIGINT UNSIGNED NOT NULL,
-    `domain` VARCHAR(128) NOT NULL,
+    `dialect` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

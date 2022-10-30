@@ -1,0 +1,3 @@
+ALTER TABLE `domain_top_levels`
+ADD CONSTRAINT `FK_domain_top_level-dialect`
+FOREIGN KEY (dialect) REFERENCES word_dialects(id);
