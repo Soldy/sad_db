@@ -1,4 +1,4 @@
-CREATE TABLE `domains-top-level` (
+CREATE TABLE `domains_top_level` (
     `id` BIGINT UNSIGNED NOT NULL,
     `domain` VARCHAR(128) NOT NULL,
      UNIQUE KEY `id` (`id`),

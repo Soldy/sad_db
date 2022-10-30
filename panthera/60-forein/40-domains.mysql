@@ -1,3 +1,3 @@
 ALTER TABLE `domains`
-ADD CONSTRAINT `FK_domains-domainTopLevel`
-FOREIGN KEY (top-level) REFERENCES domains-top-level(id);
+ADD CONSTRAINT `FK_domains-domain_top_level`
+FOREIGN KEY (top_level) REFERENCES domains_top_level(id);
