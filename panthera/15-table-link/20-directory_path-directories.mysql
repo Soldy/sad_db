@@ -1,0 +1,7 @@
+create table `link_directory_path-directories` (
+    `directory_path` bigint unsigned not null,
+    `serial` int unsigned not null,
+    `directory` bigint unsigned not null,
+     unique key `id` (`id`),
+     key `index` (`id`)
+)  engine=innodb default charset=utf8 collate=utf8_unicode_ci;

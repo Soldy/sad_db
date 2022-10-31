@@ -1,0 +1,8 @@
+ALTER TABLE `link_directory_path-directories`
+ADD CONSTRAINT `FK_link_directory_path-directory_path`
+FOREIGN KEY (directory_path) REFERENCES directory_path(id);
+
+ALTER TABLE `link_directory_path-directories`
+ADD CONSTRAINT `FK_link_directories-directories`
+FOREIGN KEY (directory) REFERENCES directories(id);
+
