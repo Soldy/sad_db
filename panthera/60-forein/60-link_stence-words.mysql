@@ -1,0 +1,7 @@
+ALTER TABLE `link_stences-dialects`
+ADD CONSTRAINT `FK_link_stences-dialects-stence`
+FOREIGN KEY (stence) REFERENCES stences(id);
+
+ALTER TABLE `link_stences-dialects`
+ADD CONSTRAINT `FK_link_stences-dialects-dialect`
+FOREIGN KEY (dialect) REFERENCES world_dialects(id);
