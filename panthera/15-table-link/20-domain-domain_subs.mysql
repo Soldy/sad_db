@@ -1,4 +1,4 @@
-CREATE TABLE `link_domain-domain_subs` (
+create table `link_domain-domain_subs` (
     `domain` BIGINT UNSIGNED NOT NULL,
     `serial` INT UNSIGNED NOT NULL,
     `domain_sub` BIGINT UNSIGNED NOT NULL,
