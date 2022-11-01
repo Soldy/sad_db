@@ -1,0 +1,7 @@
+ALTER TABLE `variables`
+ADD CONSTRAINT `FK_variables-alias`
+FOREIGN KEY (alias) REFERENCES variable_aliases(id);
+
+ALTER TABLE `variables`
+ADD CONSTRAINT `FK_variables-value`
+FOREIGN KEY (value) REFERENCES variable_values(id);

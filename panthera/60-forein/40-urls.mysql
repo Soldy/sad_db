@@ -1,0 +1,15 @@
+ALTER TABLE `urls`
+ADD CONSTRAINT `FK_urls-protocols`
+FOREIGN KEY (protocol) REFERENCES url_protocols(id);
+
+ALTER TABLE `urls`
+ADD CONSTRAINT `FK_urls-domains`
+FOREIGN KEY (domain) REFERENCES domains(id);
+
+ALTER TABLE `urls`
+ADD CONSTRAINT `FK_urls-path`
+FOREIGN KEY (path) REFERENCES directory_paths(id);
+
+ALTER TABLE `urls`
+ADD CONSTRAINT `FK_urls-file`
+FOREIGN KEY (file) REFERENCES files(id);

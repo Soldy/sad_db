@@ -1,0 +1,7 @@
+ALTER TABLE `link_url-url`
+ADD CONSTRAINT `FK_link_url-variables-url`
+FOREIGN KEY (url) REFERENCES urls(id);
+
+ALTER TABLE `link_url-variables`
+ADD CONSTRAINT `FK_link_url-variables-variables`
+FOREIGN KEY (variable) REFERENCES variables(id);

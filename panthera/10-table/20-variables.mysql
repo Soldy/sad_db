@@ -1,7 +1,7 @@
 CREATE TABLE `variables` (
     `id` BIGINT UNSIGNED NOT NULL,
-    `variable-alias` BIGINT UNSIGNED NOT NULL,
-    `variable-value` BIGINT UNSIGNED NOT NULL,
+    `alias` BIGINT UNSIGNED NOT NULL,
+    `value` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

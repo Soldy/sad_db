@@ -1,7 +1,6 @@
-CREATE TABLE `url-paths` (
+CREATE TABLE `url_protocols` (
     `id` BIGINT UNSIGNED NOT NULL,
-    `serial` INT UNSIGNED NOT NULL,
-    `directory` BIGINT UNSIGNED NOT NULL,
+    `name` VARCHAR(64) NOT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
