@@ -6,10 +6,11 @@ Self analytics database is my small hobby project. I built a lot of different da
   1. The self-analytics database is complex.
   1. Not effective with most of the ORM.
   1. Building it requires more research. 
-But the optimized models have additional benefits:
+
+But the optimized models have additional benefits: \
   1. Smaller size,
   1. better analytics performance,
-  1. recognizability ;) 
+  1. recognizability 
 
 This database can be an extra or the only database. Because of the compact design, data import and export should be fast. 
 
