@@ -1,0 +1,8 @@
+
+ALTER TABLE `email_adresses`
+ADD CONSTRAINT `FK_email_addresses-email_aliasses`
+FOREIGN KEY (alias) REFERENCES email_aliasses(id);
+
+ALTER TABLE `email_adresses`
+ADD CONSTRAINT `FK_email_addresses-domains`
+FOREIGN KEY (domain) REFERENCES domains(id);

@@ -1,0 +1,3 @@
+ALTER TABLE `email_aliasses`
+ADD CONSTRAINT `FK_email_aliasses-dialect`
+FOREIGN KEY (dialect) REFERENCES word_dialects(id);

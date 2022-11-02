@@ -1,6 +1,6 @@
-CREATE TABLE `email_aliases` (
+CREATE TABLE `email_addresses` (
     `id` BIGINT UNSIGNED NOT NULL,
-    `alias` BIGINT UNSIGNED NOT NULL COMMENT 'foreign to world_dialects.id',
+    `alias` BIGINT UNSIGNED NOT NULL COMMENT 'foreign to email_aliasses.id',
     `domain` BIGINT UNSIGNED NOT NULL COMMENT 'foreign to domains.id',
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
