@@ -1,0 +1,11 @@
+ALTER TABLE `link_expressive-world_dialect-lang`
+ADD CONSTRAINT `FK_link_expressive-world_dialect-lang-expressive`
+FOREIGN KEY (expressive) REFERENCES expressives(id);
+
+ALTER TABLE `link_expressive-world_dialect-lang`
+ADD CONSTRAINT `FK_link_expressive-world_dialect-lang-word_dialect`
+FOREIGN KEY (dialect) REFERENCES word_dialects(id);
+
+ALTER TABLE `link_expressive-world_dialect-lang`
+ADD CONSTRAINT `FK_link_expressive-world_dialect-lang-lang`
+FOREIGN KEY (lang) REFERENCES langs(id);
