@@ -1,4 +1,4 @@
-CREATE TABLE `file-names` (
+CREATE TABLE `file_names` (
     `id` BIGINT UNSIGNED NOT NULL,
     `dialect` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),

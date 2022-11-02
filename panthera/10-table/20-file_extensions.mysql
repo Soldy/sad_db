@@ -1,4 +1,4 @@
-CREATE TABLE `file-extensions` (
+CREATE TABLE `file_extensions` (
     `id` BIGINT UNSIGNED NOT NULL,
     `dialect` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),

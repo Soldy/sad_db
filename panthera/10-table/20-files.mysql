@@ -1,7 +1,7 @@
 CREATE TABLE `files` (
     `id` BIGINT UNSIGNED NOT NULL,
-    `file-name` BIGINT UNSIGNED NOT NULL,
-    `file-extensin` BIGINT UNSIGNED,
+    `name` BIGINT UNSIGNED NOT NULL,
+    `extensin` BIGINT UNSIGNED,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

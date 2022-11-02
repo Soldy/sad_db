@@ -1,0 +1,7 @@
+ALTER TABLE `files`
+ADD CONSTRAINT `FK_files-file_names`
+FOREIGN KEY (name) REFERENCES file_names(id);
+
+ALTER TABLE `files`
+ADD CONSTRAINT `FK_files-file_extensions`
+FOREIGN KEY (extension) REFERENCES file_extensions(id);

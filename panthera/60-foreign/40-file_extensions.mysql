@@ -1,0 +1,3 @@
+ALTER TABLE `file_extensions`
+ADD CONSTRAINT `FK_file_extensions-dialect`
+FOREIGN KEY (dialect) REFERENCES word_dialects(id);
