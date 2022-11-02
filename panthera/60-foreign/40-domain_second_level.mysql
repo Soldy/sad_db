@@ -1,0 +1,3 @@
+ALTER TABLE `domain_second_levels`
+ADD CONSTRAINT `FK_domain_second_level-dialect`
+FOREIGN KEY (dialect) REFERENCES word_dialects(id);
