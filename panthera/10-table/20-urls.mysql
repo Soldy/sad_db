@@ -4,6 +4,7 @@ CREATE TABLE `urls` (
     `domain` BIGINT UNSIGNED NOT NULL,
     `path` BIGINT UNSIGNED NOT NULL,
     `file` BIGINT UNSIGNED NOT NULL,
+    `port` INT UNSIGNED,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
