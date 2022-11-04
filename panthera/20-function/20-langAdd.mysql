@@ -1,0 +1,20 @@
+CREATE OR REPLACE FUNCTION `langAdd`(
+  'IISO_6391-1' CHAR(2) CHARSET utf8,
+  'IISO_6391-2T' CHAR(3) CHARSET utf8,
+  'IISO_6391-2B' CHAR(3) CHARSET utf8,
+  'IISO_6391-3' CHAR(3) CHARSET utf8,
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    INSERT INTO `lang`(
+        `ISO_639-1`,
+        `ISO_639-2T`,
+        `ISO_639-2B`,
+        `ISO_639-3`
+    ) VALUES (
+        IISO_6391-1,
+        IISO_6391-2T,
+        IISO_6391-2B,
+        IISO_6391-3
+    );
+    RETURN (SELECT LAST_INSERT_ID());
+END;
