@@ -1,0 +1,23 @@
+CREATE OR REPLACE FUNCTION `word_dialectAdd`(
+  IDIALECT VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE dialect_id INT UNSIGNED; 
+    SELECT `id`
+      INTO 
+        dialect_id 
+      FROM 
+        `word_dialects`
+       WHERE 
+           `word_dialects`.`dialect` = IDIALECT
+       LIMIT 1;
+    IF dialect_id IS NULL THEN 
+        INSERT INTO `dialects`(
+            `word_dialects`.`dialect`
+        ) VALUES (
+            IDIALECT
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN dialect_id;
+END;
