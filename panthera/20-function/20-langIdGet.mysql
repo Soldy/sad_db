@@ -1,0 +1,15 @@
+CREATE OR REPLACE FUNCTION `langIdGet`(
+  `IIN` VARCHAR(3) CHARSET utf8
+) RETURNS INT UNSIGNED 
+BEGIN
+    RETURN (
+        SELECT id 
+        FROM langs
+        WHERE 
+          `ISO_639-1` = IIN OR
+          `ISO_639-2T` = IIN OR
+          `ISO_639-2B` = IIN OR
+          `ISO_639-3` = IIN
+        LIMIT 1
+    );
+END;
