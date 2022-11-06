@@ -1,4 +1,4 @@
-CREATE TABLE `word-last-names` (
+CREATE TABLE `word_middle_names` (
     `id` BIGINT UNSIGNED NOT NULL,
     `name` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
