@@ -1,0 +1,11 @@
+CREATE OR REPLACE FUNCTION `urlSplitProtocol`(
+    IURL VARCHAR(128)
+) RETURNS VARCHAR(128)
+BEGIN
+    RETURN (
+        SELECT
+             SUBSTRING_INDEX(
+                 LOWER(IURL), '://', 1
+             )
+    );
+END;
