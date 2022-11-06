@@ -1,0 +1,15 @@
+CREATE OR REPLACE FUNCTION `urlSplitFromProtocol`(
+    IURL VARCHAR(128)
+) RETURNS VARCHAR(128)
+BEGIN
+    DECLARE a INT;
+    SELECT urlProtocolLength(IURL) INTO a;
+    SET a = a * -1;
+    SET a = a + 1;
+    RETURN (
+        SELECT
+            SUBSTRING_INDEX(
+                    LOWER(IURL), '://', a
+            )
+    );
+END;
