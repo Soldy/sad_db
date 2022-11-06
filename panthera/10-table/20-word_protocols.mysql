@@ -1,4 +1,4 @@
-CREATE TABLE `word-protocols` (
+CREATE TABLE `word_protocols` (
     `id` BIGINT UNSIGNED NOT NULL,
     `dialect` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
