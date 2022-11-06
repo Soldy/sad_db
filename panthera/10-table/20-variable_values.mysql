@@ -1,4 +1,4 @@
-CREATE TABLE `variable-values` (
+CREATE TABLE `variable_values` (
     `id` BIGINT UNSIGNED NOT NULL,
     `value` VARCHAR(512) NOT NULL,
      UNIQUE KEY `id` (`id`),

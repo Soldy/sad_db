@@ -1,4 +1,4 @@
-CREATE TABLE `variable-aliases` (
+CREATE TABLE `variable_aliases` (
     `id` BIGINT UNSIGNED NOT NULL,
     `dialect` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
