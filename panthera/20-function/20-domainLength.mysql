@@ -1,0 +1,22 @@
+CREATE OR REPLACE FUNCTION `domainLength`(
+    IDOMAIN VARCHAR(128)
+) RETURNS INT
+BEGIN
+    DECLARE domain_length INT UNSIGNED;
+    DECLARE domain_left VARCHAR(128);
+    DECLARE a INT;
+    DECLARE b INT;
+    SET a = 1;
+    SET b = 2;
+    SET domain_length = 0;
+    WHILE TRUE DO
+        IF a = b THEN
+            RETURN domain_length;
+        END IF;
+        SELECT SUBSTRING_INDEX(IDOMAIN, '.', domain_length+1) INTO domain_left;
+        SELECT CHAR_LENGTH(IDOMAIN) INTO a;
+        SELECT CHAR_LENGTH(domain_left) INTO b;
+        SET domain_length = domain_length + 1;
+    END WHILE;
+    RETURN domain_length;
+END;
