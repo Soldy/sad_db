@@ -1,5 +1,5 @@
 CREATE TABLE `word_middle_names` (
-    `id` BIGINT UNSIGNED NOT NULL,
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)

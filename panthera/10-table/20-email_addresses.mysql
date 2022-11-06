@@ -1,5 +1,5 @@
 CREATE TABLE `email_addresses` (
-    `id` BIGINT UNSIGNED NOT NULL,
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     `alias` BIGINT UNSIGNED NOT NULL COMMENT 'foreign to email_aliasses.id',
     `domain` BIGINT UNSIGNED NOT NULL COMMENT 'foreign to domains.id',
      UNIQUE KEY `id` (`id`),

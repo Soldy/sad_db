@@ -1,9 +1,9 @@
 CREATE TABLE `langs` (
-    `id` BIGINT UNSIGNED NOT NULL,
-    'ISO_639-1' CHAR (2),
-    'ISO_639-2T' CHAR (3),
-    'ISO_639-2B' CHAR (3),
-    'ISO_639-3' CHAR (3),
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `ISO_639_1` CHAR(2) UNIQUE,
+    `ISO_639_2T` CHAR(3) UNIQUE,
+    `ISO_639_2B` CHAR(3) UNIQUE,
+    `ISO_639_3` CHAR(3) UNIQUE,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

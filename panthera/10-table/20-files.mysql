@@ -1,5 +1,5 @@
 CREATE TABLE `files` (
-    `id` BIGINT UNSIGNED NOT NULL,
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     `name` BIGINT UNSIGNED NOT NULL,
     `extensin` BIGINT UNSIGNED,
      UNIQUE KEY `id` (`id`),

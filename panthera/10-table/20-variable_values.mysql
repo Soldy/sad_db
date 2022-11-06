@@ -1,5 +1,5 @@
 CREATE TABLE `variable_values` (
-    `id` BIGINT UNSIGNED NOT NULL,
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     `value` VARCHAR(512) NOT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
