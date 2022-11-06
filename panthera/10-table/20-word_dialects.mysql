@@ -1,6 +1,6 @@
-CREATE TABLE `word-dialects` (
-    `id` BIGINT UNSIGNED NOT NULL,
+CREATE TABLE `word_dialects` (
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT ,
     `dialect` VARCHAR(128) NOT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
-)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;;

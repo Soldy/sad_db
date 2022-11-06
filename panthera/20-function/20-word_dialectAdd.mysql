@@ -12,7 +12,7 @@ BEGIN
            `word_dialects`.`dialect` = IDIALECT
        LIMIT 1;
     IF dialect_id IS NULL THEN 
-        INSERT INTO `dialects`(
+        INSERT INTO `word_dialects`(
             `word_dialects`.`dialect`
         ) VALUES (
             IDIALECT
