@@ -1,0 +1,35 @@
+CREATE OR REPLACE FUNCTION `domainAdd`(
+  IDOMAIN VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE top_c VARCHAR(128) CHARSET utf8; 
+    DECLARE second_c VARCHAR(128) CHARSET utf8; 
+    DECLARE domain_id INT UNSIGNED; 
+    DECLARE top_id INT UNSIGNED; 
+    DECLARE second_id INT UNSIGNED; 
+    SELECT `domainSplitTop`(IDOMAIN) INTO top_c;
+    SELECT `domainSplitSecond`(IDOMAIN) INTO second_c;
+    SELECT `domain_top_levelAdd`(top_c) INTO top_id;
+    SELECT `domain_second_levelAdd`(second_c) INTO second_id;
+    SELECT `id`
+      INTO 
+        domain_id
+      FROM 
+        `domains`
+       WHERE 
+           `domains`.`top_level` = top_id
+          AND
+           `domains`.`second_level` = second_id
+       LIMIT 1;
+    IF domain_id IS NULL THEN 
+        INSERT INTO `domains`(
+            `domains`.`top_level`,
+            `domains`.`second_level`
+        ) VALUES (
+            top_id,
+            second_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN domain_id;
+END;
