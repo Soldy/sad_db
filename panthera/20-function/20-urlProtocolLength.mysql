@@ -1,0 +1,23 @@
+CREATE OR REPLACE FUNCTION `urlProtocolLength`(
+    IURL VARCHAR(128)
+) RETURNS INT
+BEGIN
+    # oh no 
+    DECLARE url_length INT UNSIGNED;
+    DECLARE url_left VARCHAR(128);
+    DECLARE a INT;
+    DECLARE b INT;
+    SET a = 1;
+    SET b = 2;
+    SET url_length = 0;
+    WHILE TRUE DO
+        IF a = b THEN
+            RETURN url_length;
+        END IF;
+        SELECT SUBSTRING_INDEX(IURL, '://', url_length+1) INTO url_left;
+        SELECT CHAR_LENGTH(IURL) INTO a;
+        SELECT CHAR_LENGTH(url_left) INTO b;
+        SET url_length = url_length + 1;
+    END WHILE;
+    RETURN url_length;
+END;
