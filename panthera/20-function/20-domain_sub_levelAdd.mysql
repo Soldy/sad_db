@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION `domain_sub_levelAdd`(
+  IDOMAIN VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE dialect_id INT UNSIGNED; 
+    DECLARE domain_id INT UNSIGNED; 
+    SELECT `word_dialectAdd`(LOWER(IDOMAIN)) INTO dialect_id;
+    SELECT `id`
+      INTO 
+        domain_id
+      FROM 
+          `domain_sub_levels`
+        WHERE 
+          `domain_sub_levels`.`dialect` = dialect_id
+        LIMIT 1;
+    IF domain_id IS NULL THEN 
+        INSERT INTO `domain_sub_levels`(
+            `domain_sub_levels`.`dialect`
+        ) VALUES (
+            dialect_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN domain_id;
+END;
