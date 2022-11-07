@@ -1,4 +1,4 @@
-CREATE TABLE `domain_subs` (
+CREATE TABLE `domain_sub_levels` (
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     `dialect` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
