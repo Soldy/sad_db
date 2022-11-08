@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION `email_aliassAdd`(
+  IALIASS VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE dialect_id INT UNSIGNED; 
+    DECLARE aliass_id INT UNSIGNED; 
+    SELECT `word_dialectAdd`(LOWER(IALIASS)) INTO dialect_id;
+    SELECT `id`
+      INTO 
+        aliass_id
+      FROM 
+        `email_aliassess`
+       WHERE 
+           `email_aliassess`.`dialect` = dialect_id
+       LIMIT 1;
+    IF aliass_id IS NULL THEN 
+        INSERT INTO `email_aliassess`(
+            `email_aliassess`.`dialect`
+        ) VALUES (
+            dialect_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN aliass_id;
+END;
