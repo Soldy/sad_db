@@ -1,0 +1,22 @@
+CREATE OR REPLACE FUNCTION `pathLength`(
+    IPATH VARCHAR(128)
+) RETURNS INT
+BEGIN
+    DECLARE path_length INT UNSIGNED;
+    DECLARE path_left VARCHAR(128);
+    DECLARE a INT;
+    DECLARE b INT;
+    SET a = 1;
+    SET b = 2;
+    SET path_length = 0;
+    WHILE TRUE DO
+        IF a = b THEN
+            RETURN path_length;
+        END IF;
+        SELECT SUBSTRING_INDEX(IPATH, '/', path_length+1) INTO path_left;
+        SELECT CHAR_LENGTH(IPATH) INTO a;
+        SELECT CHAR_LENGTH(path_left) INTO b;
+        SET path_length = path_length + 1;
+    END WHILE;
+    RETURN path_length;
+END;
