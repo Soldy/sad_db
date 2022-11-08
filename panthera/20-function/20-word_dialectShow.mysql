@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION `word_dialectShow`(
+  IID BIGINT UNSIGNED
+) RETURNS VARCHAR(128) CHARSET utf8
+BEGIN
+    RETURN  (
+      SELECT `dialect`
+      FROM 
+        `word_dialects`
+       WHERE 
+           `word_dialects`.`id` = IID
+       LIMIT 1
+    );
+END;
