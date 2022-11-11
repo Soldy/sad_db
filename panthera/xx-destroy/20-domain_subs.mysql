@@ -1,1 +1,1 @@
-DROP TABLES `domain_sub_levels`;
+DROP TABLES IF EXISTS `domain_sub_levels`;

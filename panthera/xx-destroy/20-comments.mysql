@@ -1,1 +1,1 @@
-DROP TABLES `comments`;
+DROP TABLES IF EXISTS `comments`;

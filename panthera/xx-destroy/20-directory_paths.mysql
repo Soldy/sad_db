@@ -1,1 +1,1 @@
-DROP TABLES `directory_paths`;
+DROP TABLES IF EXISTS `directory_paths`;

@@ -1,1 +1,1 @@
-DROP TABLES `email_aliasses`;
+DROP TABLES IF EXISTS `email_aliasses`;

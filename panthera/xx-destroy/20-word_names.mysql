@@ -1,1 +1,1 @@
-DROP TABLES `word_names`;
+DROP TABLES IF EXISTS `word_names`;

@@ -1,1 +1,1 @@
-DROP TABLES `langs`;
+DROP TABLES IF EXISTS `langs`;

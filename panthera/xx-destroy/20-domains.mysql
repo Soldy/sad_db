@@ -1,1 +1,2 @@
-DROP TABLES `domains`;
+DROP TABLES IF EXISTS `domains`;
+

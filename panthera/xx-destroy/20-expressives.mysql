@@ -1,1 +1,1 @@
-DROP TABLES `expressives`;
+DROP TABLES IF EXISTS `expressives`;

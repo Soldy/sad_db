@@ -1,1 +1,1 @@
-DROP TABLES `companies`;
+DROP TABLES IF EXISTS `companies`;

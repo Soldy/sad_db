@@ -1,1 +1,1 @@
-DROP TABLES `word_protocols`;
+DROP TABLES IF EXISTS `word_protocols`;

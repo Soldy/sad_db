@@ -1,1 +1,1 @@
-DROP TABLES `variable_values`;
+DROP TABLES IF EXISTS `variable_values`;

@@ -1,1 +1,1 @@
-DROP TABLES `variable_aliases`;
+DROP TABLES IF EXISTS `variable_aliases`;

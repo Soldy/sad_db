@@ -1,1 +1,1 @@
-DROP TABLES `url_protocols`;
+DROP TABLES IF EXISTS `url_protocols`;
