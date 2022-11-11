@@ -1,6 +1,6 @@
 CREATE TABLE `word_last_names` (
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `name` BIGINT UNSIGNED NOT NULL,
+    `dialect` BIGINT UNSIGNED NOT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

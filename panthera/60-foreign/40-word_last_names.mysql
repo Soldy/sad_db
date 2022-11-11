@@ -1,0 +1,3 @@
+ALTER TABLE `word_last_names`
+ADD CONSTRAINT `FK_word_last_names-dialect`
+FOREIGN KEY (dialect) REFERENCES word_dialects(id);
