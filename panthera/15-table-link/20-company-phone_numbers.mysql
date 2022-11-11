@@ -1,0 +1,4 @@
+CREATE TABLE `link_company-email_addresses` (
+    `company` BIGINT UNSIGNED NOT NULL,
+    `phone_number` BIGINT UNSIGNED NOT NULL,
+)  ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
