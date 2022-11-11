@@ -1,0 +1,16 @@
+CREATE OR REPLACE FUNCTION `domainSplitSubs`(
+    IDOMAIN VARCHAR(128)
+) RETURNS VARCHAR(128)
+BEGIN
+    DECLARE len_d INT;
+    SELECT domainLength(IDOMAIN) INTO len_d;
+    SET len_d = len_d - 2;
+    RETURN (
+        SELECT
+            SUBSTRING_INDEX(
+                SUBSTRING_INDEX(
+                    LOWER(IDOMAIN), '.', len_d
+                ),'.', len_d
+            )
+    );
+END;
