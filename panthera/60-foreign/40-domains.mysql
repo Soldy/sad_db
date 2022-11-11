@@ -1,7 +1,11 @@
 ALTER TABLE `domains`
 ADD CONSTRAINT `FK_domains-domain_top_level`
-FOREIGN KEY (top_level) REFERENCES domains_top_levels(id);
+FOREIGN KEY (top_level) REFERENCES domain_top_levels(id);
 
 ALTER TABLE `domains`
 ADD CONSTRAINT `FK_domains-domain_second_level`
-FOREIGN KEY (second_level) REFERENCES domains_second_levels(id);
+FOREIGN KEY (second_level) REFERENCES domain_second_levels(id);
+
+ALTER TABLE `domains`
+ADD CONSTRAINT `FK_domains-domain_sub_cache`
+FOREIGN KEY (sub_cache) REFERENCES domain_sub_cache(id);
