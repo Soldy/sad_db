@@ -1,0 +1,7 @@
+ALTER TABLE `phone_numbers`
+ADD CONSTRAINT `FK_phone_numbers-code`
+FOREIGN KEY (code) REFERENCES phone_country_code(id);
+
+ALTER TABLE `phone_numbers`
+ADD CONSTRAINT `FK_phone_numbers-sub`
+FOREIGN KEY (sub) REFERENCES phone_sub_numbers(id);
