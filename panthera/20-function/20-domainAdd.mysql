@@ -4,13 +4,17 @@ CREATE OR REPLACE FUNCTION `domainAdd`(
 BEGIN
     DECLARE top_c VARCHAR(128) CHARSET utf8; 
     DECLARE second_c VARCHAR(128) CHARSET utf8; 
+    DECLARE sub_c VARCHAR(128) CHARSET utf8; 
     DECLARE domain_id INT UNSIGNED; 
     DECLARE top_id INT UNSIGNED; 
     DECLARE second_id INT UNSIGNED; 
+    DECLARE cache_id INT UNSIGNED; 
+    SELECT `domainSplitSubs`(IDOMAIN) INTO sub_c;
     SELECT `domainSplitTop`(IDOMAIN) INTO top_c;
     SELECT `domainSplitSecond`(IDOMAIN) INTO second_c;
     SELECT `domain_top_levelAdd`(top_c) INTO top_id;
     SELECT `domain_second_levelAdd`(second_c) INTO second_id;
+    SELECT `domain_second_levelAdd`(sub_c) INTO cache_id;
     SELECT `id`
       INTO 
         domain_id
@@ -24,10 +28,12 @@ BEGIN
     IF domain_id IS NULL THEN 
         INSERT INTO `domains`(
             `domains`.`top_level`,
-            `domains`.`second_level`
+            `domains`.`second_level`,
+            `domains`.`sub_cache`
         ) VALUES (
             top_id,
-            second_id
+            second_id,
+            cache_id
         );
         RETURN (SELECT LAST_INSERT_ID());
     END IF;
