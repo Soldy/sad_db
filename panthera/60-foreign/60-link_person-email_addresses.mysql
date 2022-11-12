@@ -1,0 +1,7 @@
+ALTER TABLE `link_person-email_addresses`
+ADD CONSTRAINT `FK_link_person-email_addresses-person`
+FOREIGN KEY (company) REFERENCES persons(id);
+
+ALTER TABLE `link_person-email_addresses`
+ADD CONSTRAINT `FK_link_pesron-email_addresses-email_addresses`
+FOREIGN KEY (phone_number) REFERENCES email_addresses(id);
