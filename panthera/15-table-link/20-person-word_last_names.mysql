@@ -1,0 +1,5 @@
+CREATE TABLE `link_person-word_last_names` (
+    `person` BIGINT UNSIGNED NOT NULL,
+    `serial` INT UNSIGNED NOT NULL,
+    `last_name` BIGINT UNSIGNED NOT NULL,
+)  ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
