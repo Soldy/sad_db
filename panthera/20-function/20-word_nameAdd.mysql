@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION `word_nameAdd`(
+  IDOMAIN VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE dialect_id INT UNSIGNED; 
+    DECLARE name_id INT UNSIGNED; 
+    SELECT `word_dialectAdd`(LOWER(IDOMAIN)) INTO dialect_id;
+    SELECT `id`
+      INTO 
+        name_id
+      FROM 
+        `word_names`
+       WHERE 
+           `word_names`.`dialect` = dialect_id
+       LIMIT 1;
+    IF name_id IS NULL THEN 
+        INSERT INTO `word_names`(
+            `word_names`.`dialect
+        ) VALUES (
+            dialect_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN name_id;
+END;
