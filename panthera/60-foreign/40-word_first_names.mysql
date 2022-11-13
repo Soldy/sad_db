@@ -1,3 +1,3 @@
 ALTER TABLE `word_first_names`
-ADD CONSTRAINT `FK_word_first_names-dialect`
-FOREIGN KEY (dialect) REFERENCES word_dialects(id);
+ADD CONSTRAINT `FK_word_first_names-word_names`
+FOREIGN KEY (name) REFERENCES word_names(id);
