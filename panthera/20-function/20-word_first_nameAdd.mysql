@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION `word_first_nameAdd`(
+  IFIRSTNAME VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE name_id INT UNSIGNED; 
+    DECLARE first_name_id INT UNSIGNED; 
+    SELECT `word_nameAdd`(LOWER(IFIRSTNAME)) INTO name_id;
+    SELECT `id`
+      INTO 
+        first_name_id
+      FROM 
+        `word_first_names`
+       WHERE 
+           `word_first_names`.`name` = name_id
+       LIMIT 1;
+    IF first_name_id IS NULL THEN 
+        INSERT INTO `word_first_names`(
+            `word_first_names`.`name`
+        ) VALUES (
+            name_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN first_name_id;
+END;

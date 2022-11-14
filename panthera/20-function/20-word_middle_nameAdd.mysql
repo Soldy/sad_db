@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION `word_middle_nameAdd`(
+  IMIDDLENAME VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE name_id INT UNSIGNED; 
+    DECLARE middle_name_id INT UNSIGNED; 
+    SELECT `word_nameAdd`(LOWER(IMIDDLENAME)) INTO name_id;
+    SELECT `id`
+      INTO 
+        middle_name_id
+      FROM 
+        `word_middle_names`
+       WHERE 
+           `word_middle_names`.`name` = name_id
+       LIMIT 1;
+    IF middle_name_id IS NULL THEN 
+        INSERT INTO `word_middle_names`(
+            `word_middle_names`.`name`
+        ) VALUES (
+            name_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN middle_name_id;
+END;
