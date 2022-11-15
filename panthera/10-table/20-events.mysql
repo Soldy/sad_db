@@ -1,0 +1,9 @@
+CREATE TABLE `eventss` (
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `start` BIGINT UNSIGNED,
+    `started` BIGINT UNSIGNED,
+    `end` BIGINT UNSIGNED,
+    `ended` BIGINT UNSIGNED,
+     UNIQUE KEY `id` (`id`),
+     KEY `index` (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
