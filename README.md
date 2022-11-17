@@ -8,6 +8,8 @@ I built a lot of different databases over the years. Most of the databases hold 
   1. Not effective with most of the ORM. 
   1. Requires more research.
   1. Triple the building time.
+  1. Not S.O.L.I.D. at the moment.
+  1. Adding new data is always slow. 
 
 But the optimized self-analytics models have additional benefits.
   1. Smaller size
@@ -37,3 +39,5 @@ Planned modules at the moment:
   1. Companies
   1. Persons
   1. Geolocations
+
+  I am a TDD developer. But this project test comes with the client.
