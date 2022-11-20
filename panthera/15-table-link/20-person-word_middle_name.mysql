@@ -1,6 +1,6 @@
 CREATE TABLE `link_person-word_middle_names` (
     `person` BIGINT UNSIGNED NOT NULL,
     `serial` INT UNSIGNED NOT NULL,
-    `middle_name` BIGINT UNSIGNED NOT NULL,
+    `middle_name` BIGINT UNSIGNED NOT NULL
 )  ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
 

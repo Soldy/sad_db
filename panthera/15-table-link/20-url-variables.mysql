@@ -1,0 +1,8 @@
+CREATE TABLE `link_url-variables` (
+    `url` BIGINT UNSIGNED NOT NULL,
+    `type` BIGINT UNSIGNED NOT NULL COMMENT '1 = GET, 2 = POST, 3 = COOKIES, 4 = HEADERS',
+    `serial` INT UNSIGNED NOT NULL,
+    `variable` BIGINT UNSIGNED NOT NULL,
+     UNIQUE KEY `id` (`id`),
+     KEY `index` (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

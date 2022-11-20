@@ -1,4 +1,4 @@
 CREATE TABLE `link_person-email_addresses` (
     `persone` BIGINT UNSIGNED NOT NULL,
-    `email_address` BIGINT UNSIGNED NOT NULL,
+    `email_address` BIGINT UNSIGNED NOT NULL
 )  ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;

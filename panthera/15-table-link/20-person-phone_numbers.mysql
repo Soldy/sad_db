@@ -1,4 +1,4 @@
 CREATE TABLE `link_person-phone_numbers` (
     `persone` BIGINT UNSIGNED NOT NULL,
-    `phone_number` BIGINT UNSIGNED NOT NULL,
+    `phone_number` BIGINT UNSIGNED NOT NULL
 )  ENGINE=InnoDB DEFAULT CHARSET=UTF8 COLLATE=UTF8_UNICODE_CI;
