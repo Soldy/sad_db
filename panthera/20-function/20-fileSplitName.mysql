@@ -1,0 +1,16 @@
+CREATE OR REPLACE FUNCTION `fileSplitName`(
+    IFILE VARCHAR(128)
+) RETURNS VARCHAR(128)
+BEGIN
+    DECLARE len_d INT;
+    SELECT fileLength(Ifile) INTO len_d;
+    SET len_d = len_d - 1;
+    RETURN (
+        SELECT
+            SUBSTRING_INDEX(
+                SUBSTRING_INDEX(
+                    LOWER(IFILE), '.', len_d
+                ),'.', len_d
+            )
+    );
+END;

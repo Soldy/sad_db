@@ -1,0 +1,13 @@
+CREATE OR REPLACE FUNCTION `fileSplitExtension`(
+    IFILE VARCHAR(128)
+) RETURNS VARCHAR(128)
+BEGIN
+    RETURN (
+        SELECT
+            SUBSTRING_INDEX(
+                SUBSTRING_INDEX(
+                    LOWER(IDOMAIN), '.', -1
+                ),'.', 1
+            )
+    );
+END;
