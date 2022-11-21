@@ -1,0 +1,22 @@
+CREATE OR REPLACE FUNCTION `fileLength`(
+    IFILE VARCHAR(128)
+) RETURNS INT
+BEGIN
+    DECLARE file_length INT UNSIGNED;
+    DECLARE file_left VARCHAR(128);
+    DECLARE a INT;
+    DECLARE b INT;
+    SET a = 1;
+    SET b = 2;
+    SET file_length = 0;
+    WHILE TRUE DO
+        IF a = b THEN
+            RETURN file_length;
+        END IF;
+        SELECT SUBSTRING_INDEX(IFILE, '.', file_length+1) INTO file_left;
+        SELECT CHAR_LENGTH(IFILE) INTO a;
+        SELECT CHAR_LENGTH(file_left) INTO b;
+        SET file_length = file_length + 1;
+    END WHILE;
+    RETURN file_length;
+END;
