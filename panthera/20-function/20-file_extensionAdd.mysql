@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION `file_extensionAdd`(
+  IEXTENSION VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE dialect_id INT UNSIGNED; 
+    DECLARE file_extension_id INT UNSIGNED; 
+    SELECT `word_dialectAdd`(LOWER(IEXTENSION)) INTO dialect_id;
+    SELECT `id`
+      INTO 
+        file_extension_id
+      FROM 
+        `file_extensions`
+       WHERE 
+           `file_extensions`.`dialect` = dialect_id
+       LIMIT 1;
+    IF file_extension_id IS NULL THEN 
+        INSERT INTO `file_extensions`(
+            `file_extensions`.`dialect`
+        ) VALUES (
+            dialect_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN file_extension_id;
+END;

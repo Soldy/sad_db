@@ -1,0 +1,25 @@
+CREATE OR REPLACE FUNCTION `file_nameAdd`(
+  INAME VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE dialect_id INT UNSIGNED; 
+    DECLARE file_name_id INT UNSIGNED; 
+    SELECT `word_dialectAdd`(LOWER(INAME)) INTO dialect_id;
+    SELECT `id`
+      INTO 
+        file_name_id
+      FROM 
+        `file_names`
+       WHERE 
+           `file_names`.`dialect` = dialect_id
+       LIMIT 1;
+    IF file_name_id IS NULL THEN 
+        INSERT INTO `file_names`(
+            `file_names`.`dialect`
+        ) VALUES (
+            dialect_id
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN file_name_id;
+END;
