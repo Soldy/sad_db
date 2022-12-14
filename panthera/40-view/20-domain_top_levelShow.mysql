@@ -2,5 +2,5 @@ CREATE OR REPLACE VIEW domain_top_levelShow AS SELECT
       `domain_top_levels`.`id` AS `id`,
       `word_dialects`.`dialect` AS `alias`
     FROM `domain_top_levels`
-      LEFT JOIN  `word_dialects` ON `world_dialects`.`id` = `domain_top_levels`.`dialect`
+      LEFT JOIN  `word_dialects` ON `word_dialects`.`id` = `domain_top_levels`.`dialect`
     ORDER BY `domain_top_levels`.`id` ASC;

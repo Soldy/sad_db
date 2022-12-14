@@ -1,0 +1,6 @@
+CREATE OR REPLACE VIEW domain_sub_levelShow AS SELECT 
+      `domain_sub_levels`.`id` AS `id`,
+      `word_dialects`.`dialect` AS `alias`
+    FROM `domain_sub_levels`
+      LEFT JOIN  `word_dialects` ON `word_dialects`.`id` = `domain_sub_levels`.`dialect`
+    ORDER BY `domain_sub_levels`.`id` ASC;
