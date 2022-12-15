@@ -1,6 +1,6 @@
 CREATE TABLE `comments` (
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `user` VARCHAR(32) NOT NULL,
+    `user` BIGINT NOT NULL,
     `created` BIGINT NOT NULL,
     `comment` VARCHAR(1024) NOT NULL,
      UNIQUE KEY `id` (`id`),
