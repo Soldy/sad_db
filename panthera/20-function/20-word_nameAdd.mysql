@@ -15,7 +15,7 @@ BEGIN
        LIMIT 1;
     IF name_id IS NULL THEN 
         INSERT INTO `word_names`(
-            `word_names`.`dialect
+            `word_names`.`dialect`
         ) VALUES (
             dialect_id
         );
