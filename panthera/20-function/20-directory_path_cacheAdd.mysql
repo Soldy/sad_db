@@ -1,0 +1,23 @@
+CREATE OR REPLACE FUNCTION `directory_path_cacheAdd`(
+  IPATH VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE path_id INT UNSIGNED; 
+    SELECT `id`
+      INTO 
+        path_id 
+      FROM 
+        `directory_path_cache`
+       WHERE 
+           `directory_path_cache`.`cache` = LOWER(ISUB)
+       LIMIT 1;
+    IF path_id IS NULL THEN 
+        INSERT INTO `directory_path_cache`(
+            `directory_path_cache`.`cache`
+        ) VALUES (
+            LOWER(ISUB)
+        );
+        RETURN (SELECT LAST_INSERT_ID());
+    END IF;
+    RETURN path_id;
+END;
