@@ -1,0 +1,6 @@
+CREATE OR REPLACE VIEW domain_sub_cacheShow AS SELECT 
+      `domain_sub_cache`.`id` AS `id`,
+      `domain_sub_cache`.`cache` AS `alias`
+    FROM `domain_sub_cache`
+    ORDER BY `domain_sub_cache`.`id`;
+
