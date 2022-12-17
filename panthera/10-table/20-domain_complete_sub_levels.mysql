@@ -1,8 +1,5 @@
-CREATE TABLE `domains` (
+CREATE TABLE `domain_complete_sub_levels` (
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `top_level` BIGINT UNSIGNED NOT NULL,
-    `second_level` BIGINT UNSIGNED NOT NULL,
-    `sub_cache` BIGINT UNSIGNED DEFAULT NULL,
      UNIQUE KEY `id` (`id`),
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

@@ -1,4 +1,4 @@
-CREATE TABLE `eventss` (
+CREATE TABLE `events` (
     `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
     `start` BIGINT UNSIGNED,
     `started` BIGINT UNSIGNED,
