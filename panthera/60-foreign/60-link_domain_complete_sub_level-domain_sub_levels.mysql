@@ -1,0 +1,7 @@
+ALTER TABLE `link_domain_complete_sub_level-domain_sub_levels`
+ADD CONSTRAINT `FK_link_domain_complete_sub_level-domain_sub_level-domain`
+FOREIGN KEY (complete) REFERENCES domain_complete_sub_levels(id);
+
+ALTER TABLE `link_domain_complete_sub_level-domain_sub_levels`
+ADD CONSTRAINT `FK_link_domain_complete_sub_level-domain_sub_level-domain_sub`
+FOREIGN KEY (sub) REFERENCES domain_sub_levels(id);
