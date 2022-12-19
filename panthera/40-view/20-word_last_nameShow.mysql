@@ -1,0 +1,8 @@
+CREATE OR REPLACE VIEW word_last_nameShow AS SELECT 
+      `word_last_names`.`id` AS `id`,
+      `word_nameShow`.`name` AS `name`
+    FROM `word_last_names`
+      LEFT JOIN  `word_nameShow`
+        ON `word_nameShow`.`id` = `word_last_names`.`name`
+    ORDER BY `word_last_names`.`id` ASC;
+

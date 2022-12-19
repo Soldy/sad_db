@@ -1,0 +1,8 @@
+CREATE OR REPLACE VIEW email_aliasShow AS SELECT 
+      `email_aliasses`.`id` AS `id`,
+      `word_dialects`.`dialect` AS `alias`
+    FROM `email_aliasses`
+      LEFT JOIN  `word_dialects`
+        ON `word_dialects`.`id` = `email_aliasses`.`dialect`
+    ORDER BY `email_aliasses`.`id` ASC;
+

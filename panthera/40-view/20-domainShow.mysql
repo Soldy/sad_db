@@ -1,9 +1,25 @@
 CREATE OR REPLACE VIEW domainShow AS SELECT 
       `domains`.`id` AS `id`,
-      CONCAT(`domain_second_levelShow`.`alias`, '.',`domain_top_levelShow`.`alias`) AS `domain`
+      IF( 
+          `domains`.`sub_cache` IS NULL,
+          CONCAT(
+              `domain_second_levelShow`.`alias`,
+              '.'
+              `domain_top_levelShow`.`alias`),
+          CONCAT(
+              `domain_sub_cacheShow`.`alias`,
+              '.',
+              `domain_second_levelShow`.`alias`,
+              '.',
+              `domain_top_levelShow`.`alias`
+            )
+      ) AS `domain`
     FROM `domains`
       LEFT JOIN `domain_second_levelShow`
         ON `domains`.`second_level` = `domain_second_levelShow`.`id`
       LEFT JOIN `domain_top_levelShow`
         ON `domains`.`top_level` = `domain_top_levelShow`.`id`
+      LEFT JOIN `domain_sub_cacheShow`
+        ON `domains`.`sub_cache` = `domain_sub_cacheShow`.`id`
+
     ORDER BY `domains`.`id` ASC;

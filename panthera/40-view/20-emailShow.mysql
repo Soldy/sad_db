@@ -1,0 +1,7 @@
+CREATE OR REPLACE VIEW emailShow AS SELECT 
+      `email_addresses`.`id` AS `id`,
+      `email_aliasShow`.`alias` AS `alias`
+    FROM `email_addresses`
+      LEFT JOIN  `email_aliasShow`
+        ON `email_aliasShow`.`id` = `email_addresses`.`alias`
+      ORDER BY `email_addresses`.`id` ASC;

@@ -1,0 +1,8 @@
+CREATE OR REPLACE VIEW word_nameShow AS SELECT 
+      `word_names`.`id` AS `id`,
+      `word_dialects`.`dialect` AS `name`
+    FROM `word_names`
+      LEFT JOIN  `word_dialects`
+        ON `word_dialects`.`id` = `word_names`.`dialect`
+    ORDER BY `word_names`.`id` ASC;
+
