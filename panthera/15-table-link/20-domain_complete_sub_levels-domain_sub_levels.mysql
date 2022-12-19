@@ -1,0 +1,7 @@
+create table `link_domain_complete_sub_level-domain_sub_levels` (
+    `complete` BIGINT UNSIGNED NOT NULL,
+    `serial` INT UNSIGNED NOT NULL,
+    `sub` BIGINT UNSIGNED NOT NULL,
+     UNIQUE KEY `id` (`id`),
+     KEY `index` (`id`)
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
