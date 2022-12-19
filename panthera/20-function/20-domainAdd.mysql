@@ -14,7 +14,7 @@ BEGIN
     SELECT `domainSplitSecond`(IDOMAIN) INTO second_c;
     SELECT `domain_top_levelAdd`(top_c) INTO top_id;
     SELECT `domain_second_levelAdd`(second_c) INTO second_id;
-    SELECT `domain_second_levelAdd`(sub_c) INTO cache_id;
+    SELECT `domain_sub_cacheAdd`(sub_c) INTO cache_id;
     SELECT `id`
       INTO 
         domain_id
@@ -24,6 +24,8 @@ BEGIN
            `domains`.`top_level` = top_id
           AND
            `domains`.`second_level` = second_id
+          AND
+           `domains`.`sub_cache` = cache_id
        LIMIT 1;
     IF domain_id IS NULL THEN 
         INSERT INTO `domains`(
